@@ -11,10 +11,10 @@ import { Check, ArrowRight } from "lucide-react"
 
 export default function Home() {
   const popularParts = [
-    { name: "Engines", image: "/engine.png?height=200&width=300", link: "/parts/engines" },
-    { name: "Transmissions", image: "/transmissions.png?height=200&width=300", link: "/parts/transmissions" },
-    { name: "AC Compressors", image: "/ac-compressor.png?height=200&width=300", link: "/parts/ac-compressor" },
-    { name: "Alternators", image: "/alternator.webp?height=200&width=300", link: "/parts/alternators" },
+    { name: "Engines", image: "/engine.png?height=300&width=300", link: "/parts/engine" },
+    { name: "Transmissions", image: "/transmission.png?height=300&width=300", link: "/parts/transmission" },
+    { name: "AC Compressors", image: "/ac-compressor.png?height=300&width=300", link: "/parts/ac-compressor" },
+    { name: "Transfer Cases", image: "/transfer-case.jpg?height=300&width=300", link: "/parts/transfer-case" },
   ]
 
   return (
@@ -35,16 +35,17 @@ export default function Home() {
             />
           </div>
           <div className="absolute inset-0 z-20 flex items-center">
-            <div className="container mx-auto px-4">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div className="text-center md:text-left">
+            <div className="container mx-auto px-4 w-full">
+              {/* Desktop/Tablet: Show 2 columns */}
+              <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+                <div className="text-left">
                   <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
                     Quality Used <span className="text-teal-400">Auto Parts</span> Information
                   </h1>
                   <p className="text-lg md:text-xl mb-6 text-gray-200">
                     Find comprehensive information about auto parts, specifications, and compatibility for your vehicle.
                   </p>
-                  <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                  <div className="flex flex-col sm:flex-row justify-start gap-4">
                     <Button asChild size="lg" className="bg-teal-500 hover:bg-teal-600 w-full sm:w-auto">
                       <Link href="/parts">Browse Parts</Link>
                     </Button>
@@ -58,7 +59,13 @@ export default function Home() {
                     </Button>
                   </div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-lg border border-white/20 mt-6 md:mt-0">
+                <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-lg border border-white/20 mt-6 md:mt-0 max-w-md w-full mx-auto">
+                  <FindPartForm />
+                </div>
+              </div>
+              {/* Mobile: Show only form */}
+              <div className="flex md:hidden justify-center items-center w-full min-h-[400px]">
+                <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20 w-full max-w-md mx-auto">
                   <FindPartForm />
                 </div>
               </div>
