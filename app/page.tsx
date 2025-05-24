@@ -11,10 +11,10 @@ import { Check, ArrowRight } from "lucide-react"
 
 export default function Home() {
   const popularParts = [
-    { name: "Engines", image: "/engine.png?height=300&width=300", link: "/parts/engine" },
-    { name: "Transmissions", image: "/images/transmission.png?height=300&width=300", link: "/parts/transmission" },
-    { name: "AC Compressors", image: "/ac-compressor.png?height=300&width=300", link: "/parts/ac-compressor" },
-    { name: "Transfer Cases", image: "/images/transfer-case.jpg?height=300&width=300", link: "/parts/transfer-case" },
+    { name: "Engines", image: "/engine.png?height=400&width=300", link: "/parts/engine" },
+    { name: "Transmissions", image: "/images/transmission.png?height=400&width=300", link: "/parts/transmission" },
+    { name: "AC Compressors", image: "/ac-compressor.png?height=400&width=300", link: "/parts/ac-compressor" },
+    { name: "Transfer Cases", image: "/images/transfer-case.jpg?height=400&width=300", link: "/parts/transfer-case" },
   ]
 
   return (
