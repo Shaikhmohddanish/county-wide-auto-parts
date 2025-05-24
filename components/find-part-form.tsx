@@ -101,10 +101,14 @@ export function FindPartForm() {
 
   return (
     <div className="bg-white rounded-lg border shadow-sm overflow-hidden">
-      <div className="bg-teal-500 text-white p-3 md:p-4 text-center text-lg md:text-xl font-semibold">
-        <h2>Find Part Information</h2>
-      </div>
-
+      {step === 1 && (
+        <div className="bg-teal-600 text-white p-4 md:p-6 text-center">
+          <h2 className="text-lg md:text-xl font-bold">Find Your Auto Part</h2>
+          <p className="text-sm md:text-base mt-2">
+            Select your vehicle details to get the part information you need.
+          </p>
+        </div>
+      )}
       <form onSubmit={handleSubmit} className="p-4 md:p-6 space-y-3 md:space-y-4">
         {showFillMessage && <p className="text-red-500 font-bold text-center">Fill in all Details</p>}
 
