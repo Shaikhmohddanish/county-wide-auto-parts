@@ -15,14 +15,14 @@ export function SiteFooter() {
     setIsSubmitting(true);
     setNewsletterStatus(null);
     try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbwTGkISdNpa_zlNpHN_DmNaERhCjhHI8paMy80yH0-cd5I4lfQpRvIwNuO3le1DL4Jp/exec",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ newsletterEmail }),
-        }
-      );
+      // Use FormData for compatibility with your proxy route
+      const formData = new FormData();
+      formData.append("newsletterEmail", newsletterEmail);
+
+      const response = await fetch("/api/google-form-proxy", {
+        method: "POST",
+        body: formData,
+      });
       if (!response.ok) throw new Error("Submission failed");
       setNewsletterStatus("success");
       setNewsletterEmail("");
@@ -53,6 +53,7 @@ export function SiteFooter() {
                 value={newsletterEmail}
                 onChange={e => setNewsletterEmail(e.target.value)}
                 required
+                pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                 disabled={isSubmitting}
               />
               <Button

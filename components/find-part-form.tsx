@@ -3,7 +3,7 @@
 import type React from "react"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { brandModels } from "@/lib/brand-models";
+import { brandModels } from "@/lib/brand-models"
 import { parts } from "@/lib/parts"
 
 export function FindPartForm() {
@@ -61,19 +61,20 @@ export function FindPartForm() {
   }
 
   // Handle form submission
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
 
     try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbwTGkISdNpa_zlNpHN_DmNaERhCjhHI8paMy80yH0-cd5I4lfQpRvIwNuO3le1DL4Jp/exec",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      )
+      // Use FormData API for best compatibility with your API route
+      const formElement = e.target as HTMLFormElement
+      const formDataObj = new FormData(formElement)
+
+      const response = await fetch("/api/google-form-proxy", {
+        method: "POST",
+        body: formDataObj,
+      })
+
       if (!response.ok) throw new Error("Submission failed")
       setShowSuccess(true)
       setStep(3)
@@ -165,20 +166,20 @@ export function FindPartForm() {
 
             <div>
               <select
-              name="part"
-              id="part"
-              value={formData.part}
-              onChange={handleChange}
-              className="w-full p-2 border rounded text-black text-sm md:text-base"
-              required
-            >
-              <option value="">Select Part</option>
-              {parts.map((part) => (
-                <option key={part} value={part}>
-                  {part}
-                </option>
-              ))}
-            </select>
+                name="part"
+                id="part"
+                value={formData.part}
+                onChange={handleChange}
+                className="w-full p-2 border rounded text-black text-sm md:text-base"
+                required
+              >
+                <option value="">Select Part</option>
+                {parts.map((part) => (
+                  <option key={part} value={part}>
+                    {part}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <Button
@@ -226,7 +227,7 @@ export function FindPartForm() {
                 onChange={handleChange}
                 placeholder="Email"
                 className="w-full p-2 border rounded text-black text-sm md:text-base"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                 title="Please enter a valid email address"
                 required
               />
