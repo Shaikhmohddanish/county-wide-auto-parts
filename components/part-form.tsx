@@ -110,7 +110,15 @@ export function PartForm({ selectedPart }: PartFormProps) {
 
       <form onSubmit={handleSubmit} className="p-4 md:p-6 space-y-3 md:space-y-4">
         {showFillMessage && <p className="text-red-500 font-bold text-center">Fill in all Details</p>}
-
+        {/* Hidden inputs for Step 1 data (if on step 2) */}
+        {step === 2 && (
+          <>
+            <input type="hidden" name="year" value={formData.year} />
+            <input type="hidden" name="make" value={formData.make} />
+            <input type="hidden" name="model" value={formData.model} />
+            <input type="hidden" name="part" value={formData.part} />
+          </>
+        )}
         {step === 1 && (
           <div className="space-y-3 md:space-y-4">
             <div>
