@@ -2,8 +2,36 @@ import Link from "next/link"
 import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { useState } from "react"
 
 export function SiteFooter() {
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterStatus, setNewsletterStatus] = useState<null | "success" | "error">(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setNewsletterStatus(null);
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbwTGkISdNpa_zlNpHN_DmNaERhCjhHI8paMy80yH0-cd5I4lfQpRvIwNuO3le1DL4Jp/exec",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ newsletterEmail }),
+        }
+      );
+      if (!response.ok) throw new Error("Submission failed");
+      setNewsletterStatus("success");
+      setNewsletterEmail("");
+    } catch (err) {
+      setNewsletterStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
@@ -16,14 +44,30 @@ export function SiteFooter() {
                 Stay updated with our latest information, new arrivals, and helpful auto part guides.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-2">
+            <form className="flex flex-col sm:flex-row gap-2" onSubmit={handleNewsletterSubmit}>
               <Input
                 type="email"
                 placeholder="Your email address"
                 className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-white"
+                value={newsletterEmail}
+                onChange={e => setNewsletterEmail(e.target.value)}
+                required
+                disabled={isSubmitting}
               />
-              <Button className="bg-white text-teal-600 hover:bg-gray-100 whitespace-nowrap">Subscribe Now</Button>
-            </div>
+              <Button
+                className="bg-white text-teal-600 hover:bg-gray-100 whitespace-nowrap"
+                type="submit"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Subscribing..." : "Subscribe Now"}
+              </Button>
+              {newsletterStatus === "success" && (
+                <span className="text-green-200 text-xs ml-2 mt-1">Subscribed!</span>
+              )}
+              {newsletterStatus === "error" && (
+                <span className="text-red-200 text-xs ml-2 mt-1">Error. Try again.</span>
+              )}
+            </form>
           </div>
         </div>
 

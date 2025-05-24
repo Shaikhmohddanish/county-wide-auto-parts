@@ -65,28 +65,37 @@ export function FindPartForm() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbwTGkISdNpa_zlNpHN_DmNaERhCjhHI8paMy80yH0-cd5I4lfQpRvIwNuO3le1DL4Jp/exec",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      )
+      if (!response.ok) throw new Error("Submission failed")
       setShowSuccess(true)
       setStep(3)
-
-      // Reset form after 3 seconds
+      setFormData({
+        year: "",
+        make: "",
+        model: "",
+        part: "",
+        name: "",
+        email: "",
+        contact: "",
+        zip: "",
+      })
       setTimeout(() => {
-        setFormData({
-          year: "",
-          make: "",
-          model: "",
-          part: "",
-          name: "",
-          email: "",
-          contact: "",
-          zip: "",
-        })
         setStep(1)
         setShowSuccess(false)
       }, 3000)
-    }, 1500)
+    } catch (err) {
+      alert("There was an error submitting the form. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
