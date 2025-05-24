@@ -22,6 +22,12 @@ export function FindPartForm() {
   const [models, setModels] = useState<string[]>([])
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
+  const [submittedPartInfo, setSubmittedPartInfo] = useState<{
+    year: string;
+    make: string;
+    model: string;
+    part: string;
+  } | null>(null)
 
   // Function to get models for a selected make
   const getModelsForMake = (make: string) => {
@@ -76,6 +82,12 @@ export function FindPartForm() {
       })
 
       if (!response.ok) throw new Error("Submission failed")
+      setSubmittedPartInfo({
+        year: formData.year,
+        make: formData.make,
+        model: formData.model,
+        part: formData.part,
+      })
       setShowSuccess(true)
       setStep(3)
       setFormData({
@@ -91,6 +103,7 @@ export function FindPartForm() {
       setTimeout(() => {
         setStep(1)
         setShowSuccess(false)
+        setSubmittedPartInfo(null)
       }, 3000)
     } catch (err) {
       alert("There was an error submitting the form. Please try again.")
@@ -113,7 +126,7 @@ export function FindPartForm() {
         {showFillMessage && <p className="text-red-500 font-bold text-center">Fill in all Details</p>}
 
         {/* Hidden inputs for Step 1 data (if on step 2) */}
-        {step === 2 && (
+        {(step === 2)  && (
           <>
             <input type="hidden" name="year" value={formData.year} />
             <input type="hidden" name="make" value={formData.make} />
@@ -291,8 +304,14 @@ export function FindPartForm() {
                 <div className="bg-green-50 border border-green-200 text-green-700 p-3 md:p-4 rounded-md">
                   <p className="font-bold">Thank you for your request!</p>
                   <p className="mt-2">
-                    We've received your inquiry about the {formData.year} {formData.make} {formData.model}{" "}
-                    {formData.part}. Our team will compile detailed information and send it to your email shortly.
+                    {submittedPartInfo ? (
+                      <>
+                        We've received your inquiry about the {submittedPartInfo.year} {submittedPartInfo.make} {submittedPartInfo.model} {submittedPartInfo.part}.<br />
+                        Our team will compile detailed information and send it to your email shortly.
+                      </>
+                    ) : (
+                      <>We've received your inquiry. Our team will compile detailed information and send it to your email shortly.</>
+                    )}
                   </p>
                 </div>
               )}
