@@ -40,7 +40,7 @@ export default function AboutPage() {
               <p>
                 We have built a wide network of suppliers and junkyards across the country, allowing us to source even
                 the hardest-to-find parts. Whether you need a rear light assembly, quarter panel, or full engine,
-                QuickSnap either has it in stock or can arrange to get it for you through our extensive network.
+                County wide auto parts either has it in stock or can arrange to get it for you through our extensive network.
               </p>
             </div>
           </div>

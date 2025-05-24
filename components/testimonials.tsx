@@ -7,7 +7,7 @@ export function Testimonials() {
       name: "Michael Johnson",
       role: "Ford F-150 Owner",
       content:
-        "I was skeptical about buying used auto parts online, but QuickSnap exceeded my expectations. The engine I purchased was in excellent condition and arrived faster than expected. Their customer service was outstanding throughout the process.",
+        "I was skeptical about buying used auto parts online, but County wide auto parts exceeded my expectations. The engine I purchased was in excellent condition and arrived faster than expected. Their customer service was outstanding throughout the process.",
       rating: 5,
     },
     {
@@ -15,7 +15,7 @@ export function Testimonials() {
       name: "Sarah Williams",
       role: "Toyota Camry Owner",
       content:
-        "After a minor accident, I needed a new bumper for my Camry. QuickSnap had exactly what I needed at half the price of the dealership. The part matched perfectly and the shipping was free. I'll definitely be using them again!",
+        "After a minor accident, I needed a new bumper for my Camry. County wide auto parts had exactly what I needed at half the price of the dealership. The part matched perfectly and the shipping was free. I'll definitely be using them again!",
       rating: 5,
     },
     {
@@ -23,7 +23,7 @@ export function Testimonials() {
       name: "David Martinez",
       role: "Professional Mechanic",
       content:
-        "As a mechanic, I need reliable parts at competitive prices. QuickSnap has become my go-to source for quality used OEM parts. Their warranty policy gives me confidence, and my customers are always satisfied with the results.",
+        "As a mechanic, I need reliable parts at competitive prices. County wide auto parts has become my go-to source for quality used OEM parts. Their warranty policy gives me confidence, and my customers are always satisfied with the results.",
       rating: 4,
     },
   ]
