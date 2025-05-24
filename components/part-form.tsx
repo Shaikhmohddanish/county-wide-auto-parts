@@ -253,7 +253,7 @@ export function PartForm({ selectedPart }: PartFormProps) {
                 onChange={handleChange}
                 placeholder="Email"
                 className="w-full p-2 border rounded text-black text-sm md:text-base"
-                pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                pattern="[a-zA-Z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                 title="Please enter a valid email address"
                 required
               />
