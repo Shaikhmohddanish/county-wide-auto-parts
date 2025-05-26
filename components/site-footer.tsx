@@ -158,7 +158,7 @@ export function SiteFooter() {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-teal-500 mr-2 mt-0.5" />
-                <span className="text-gray-400">123 Auto Parts Lane, Anytown, USA 12345</span>
+                <span className="text-gray-400">1828 NW US Hwy 50, Kingsville, MO 64061</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-teal-500 mr-2" />

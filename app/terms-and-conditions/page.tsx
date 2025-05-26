@@ -149,7 +149,7 @@ export default function TermsAndConditionsPage() {
                     <br />
                     Phone: (555) 123-4567
                     <br />
-                    Address: 123 Auto Parts Lane, Anytown, USA 12345
+                    Address: 1828 NW US Hwy 50, Kingsville, MO 64061
                   </p>
                 </div>
               </div>

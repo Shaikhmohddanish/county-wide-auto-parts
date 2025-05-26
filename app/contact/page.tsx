@@ -27,7 +27,7 @@ export default function ContactPage() {
                       <MapPin className="h-5 w-5 text-teal-500 mr-3 mt-0.5" />
                       <div>
                         <h3 className="font-medium">Our Location</h3>
-                        <p className="text-gray-600">123 Auto Parts Lane, Anytown, USA 12345</p>
+                        <p className="text-gray-600">1828 NW US Hwy 50, Kingsville, MO 64061</p>
                       </div>
                     </div>
 
