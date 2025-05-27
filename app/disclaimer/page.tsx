@@ -176,7 +176,7 @@ export default function DisclaimerPage() {
                   <p className="mb-4">
                     Email: support@countywideauto.com
                     <br />
-                    Phone: (555) 123-4567
+                    Phone: 888 383-4206
                     <br />
                     Address: 1828 NW US Hwy 50, Kingsville, MO 64061
                   </p>

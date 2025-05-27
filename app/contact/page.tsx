@@ -35,7 +35,12 @@ export default function ContactPage() {
                       <Phone className="h-5 w-5 text-teal-500 mr-3 mt-0.5" />
                       <div>
                         <h3 className="font-medium">Phone Number</h3>
-                        <p className="text-gray-600">(555) 123-4567</p>
+                        <a
+                          href="tel:8883834206"
+                          className="text-yellow-500 text-lg font-bold underline underline-offset-4 hover:text-yellow-400 focus:text-yellow-400 transition-colors duration-150"
+                        >
+                          888 383-4206
+                        </a>
                       </div>
                     </div>
 
