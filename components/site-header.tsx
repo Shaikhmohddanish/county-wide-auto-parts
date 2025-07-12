@@ -46,7 +46,7 @@ export function SiteHeader() {
                 alt="County Wide Auto Parts Logo"
                 className="h-12 w-12 md:h-16 md:w-16 object-contain"
               />
-              <div className="text-teal-600 font-bold text-xl md:text-2xl">County wide auto parts</div>
+              <div className="text-teal-600 font-bold text-xl md:text-2xl">County Wide Auto Parts</div>
             </div>
           </Link>
 
