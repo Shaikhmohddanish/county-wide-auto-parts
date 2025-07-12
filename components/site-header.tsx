@@ -147,7 +147,20 @@ export function SiteHeader() {
                   className="block py-2 text-gray-700 hover:text-teal-600 font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Contact
+                  <div className="flex items-center">
+                    <Phone className="h-4 w-4 mr-2" />
+                    Contact
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/search"
+                  className="flex items-center py-2 px-4 bg-teal-600 text-white rounded font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Search className="h-4 w-4 mr-2" />
+                  Search Parts
                 </Link>
               </li>
             </ul>
