@@ -178,7 +178,7 @@ export default function DisclaimerPage() {
                     <br />
                     Phone: 888 347-1455
                     <br />
-                    Address: 1828 NW US Hwy 50, Kingsville, MO 64061
+                    Address: 3815 N Lewis Ave Tulsa, OK 74110
                   </p>
                 </div>
               </div>

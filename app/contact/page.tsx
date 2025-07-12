@@ -22,12 +22,11 @@ export default function ContactPage() {
                     as soon as possible.
                   </p>
 
-                  <div className="space-y-4 mb-6">
-                    <div className="flex items-start">
+                  <div className="space-y-4 mb-6">                      <div className="flex items-start">
                       <MapPin className="h-5 w-5 text-teal-500 mr-3 mt-0.5" />
                       <div>
                         <h3 className="font-medium">Our Location</h3>
-                        <p className="text-gray-600">1828 NW US Hwy 50, Kingsville, MO 64061</p>
+                        <p className="text-gray-600">3815 N Lewis Ave Tulsa, OK 74110</p>
                       </div>
                     </div>
 

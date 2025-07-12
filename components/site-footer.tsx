@@ -82,20 +82,6 @@ export function SiteFooter() {
               Your trusted source for high-quality used OEM auto parts with the best information and resources for your
               vehicle needs.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Youtube className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -145,6 +131,16 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link href="/privacy-policy" className="text-gray-400 hover:text-white">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/advertising-policy" className="text-gray-400 hover:text-white">
+                  Advertising Policy
+                </Link>
+              </li>
+              <li>
                 <Link href="/disclaimer" className="text-gray-400 hover:text-white">
                   Disclaimer
                 </Link>
@@ -158,7 +154,7 @@ export function SiteFooter() {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-teal-500 mr-2 mt-0.5" />
-                <span className="text-gray-400">1828 NW US Hwy 50, Kingsville, MO 64061</span>
+                <span className="text-gray-400">3815 N Lewis Ave Tulsa, OK 74110</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-teal-500 mr-2" />

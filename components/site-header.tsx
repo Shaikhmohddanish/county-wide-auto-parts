@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -29,12 +30,7 @@ export function SiteHeader() {
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center mb-2 md:mb-0">
             <Phone className="h-4 w-4 mr-2" />
-            <span className="text-sm">Call Us: 888 347-1455</span>
-          </div>
-          <div className="flex space-x-4 text-sm">
-            <Link href="/contact" className="hover:underline">
-              Contact
-            </Link>
+            <Link href="tel:8883471455" className="text-sm hover:underline">Call Us: 888 347-1455</Link>
           </div>
         </div>
       </div>
@@ -44,8 +40,13 @@ export function SiteHeader() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <div className="flex items-center">
-              <div className="text-teal-600 font-bold text-2xl">County wide auto parts</div>
+            <div className="flex items-center gap-3">
+              <img 
+                src="/website-logo.png" 
+                alt="County Wide Auto Parts Logo"
+                className="h-12 w-12 md:h-16 md:w-16 object-contain"
+              />
+              <div className="text-teal-600 font-bold text-xl md:text-2xl">County wide auto parts</div>
             </div>
           </Link>
 
@@ -120,15 +121,6 @@ export function SiteHeader() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="block py-2 text-gray-700 hover:text-teal-600 font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact
                 </Link>
               </li>
             </ul>

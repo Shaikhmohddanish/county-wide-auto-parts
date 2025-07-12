@@ -136,7 +136,7 @@ export default function SearchPage() {
           <div>
             <h3 className="text-xl font-bold mb-4">#1 Online Car Quality Parts Locator!</h3>
             <p className="text-sm text-gray-600">
-              countywideauto.com has helped millions of customers over the decades locate hard to find car parts
+              www.countywideauto.com has helped millions of customers over the decades locate hard to find car parts
               around the United States.
             </p>
           </div>
