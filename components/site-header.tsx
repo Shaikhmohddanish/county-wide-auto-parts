@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Menu, X } from "lucide-react"
+import { Phone, Menu, X, Search } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 export function SiteHeader() {
@@ -49,6 +49,24 @@ export function SiteHeader() {
               <div className="text-teal-600 font-bold text-xl md:text-2xl">County wide auto parts</div>
             </div>
           </Link>
+
+          {/* Desktop Action Items */}
+          <div className="hidden md:flex items-center space-x-6 ml-auto">
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center bg-gray-100 px-3 py-1 rounded-full">
+                <span className="text-teal-600 mr-2">🚚</span>
+                <span className="text-gray-700 text-sm">Free shipping on orders over $99</span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-teal-600 mr-1">✅</span>
+                <span className="text-gray-700 text-sm">1-year warranty</span>
+              </div>
+            </div>
+            <Link href="/search" className="bg-teal-600 hover:bg-teal-700 text-white py-2 px-4 rounded transition-colors flex items-center">
+              <Search className="h-4 w-4 mr-2" />
+              Search Parts
+            </Link>
+          </div>
 
           {/* Mobile Menu Toggle */}
           <div className="flex items-center">
@@ -121,6 +139,15 @@ export function SiteHeader() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="block py-2 text-gray-700 hover:text-teal-600 font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact
                 </Link>
               </li>
             </ul>
