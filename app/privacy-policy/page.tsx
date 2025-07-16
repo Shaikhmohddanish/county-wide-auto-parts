@@ -150,7 +150,7 @@ export default function PrivacyPolicyPage() {
                     <br />
                     Email: support@countywideauto.com
                     <br />
-                    Phone: 888 347-1455
+                    Phone: 888 419-4055
                     <br />
                     Address: 3815 N Lewis Ave Tulsa, OK 74110
                     <br />

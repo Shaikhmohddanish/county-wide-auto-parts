@@ -158,7 +158,7 @@ export function SiteFooter() {
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-teal-500 mr-2" />
-                <a href="tel:8883471455" className="text-yellow-300 text-lg font-bold underline underline-offset-4 hover:text-yellow-400 focus:text-yellow-400 transition-colors duration-150">888 347-1455</a>
+                <a href="tel:8884194055" className="text-yellow-300 text-lg font-bold underline underline-offset-4 hover:text-yellow-400 focus:text-yellow-400 transition-colors duration-150">888 419-4055</a>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-teal-500 mr-2" />
@@ -191,7 +191,7 @@ export function SiteFooter() {
 
       {/* Floating Call Button */}
       <a
-        href="tel:8883471455"
+        href="tel:8884194055"
         className="fixed bottom-6 left-6 z-50 bg-teal-600 hover:bg-teal-700 text-white rounded-full shadow-lg p-4 flex items-center justify-center animate-bounce focus:outline-none focus:ring-2 focus:ring-teal-400"
         style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.2)" }}
         aria-label="Call us"
