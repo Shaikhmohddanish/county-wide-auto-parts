@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "County wide auto parts - Buy High Quality Used Auto Parts Online",
   description:
     "Find high quality used OEM auto parts with free shipping and the best warranty. Save over 50% off dealer prices on certified and tested parts.",
-  generator: 'v0.dev',
+  generator: 'County wide auto parts',
   icons: {
     icon: [
       { url: '/website-logo.png' }
@@ -30,7 +30,7 @@ export default function RootLayout({
       <head>
         {/* Google tag (gtag.js) */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-NY6YZTH64L"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17380423761"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -38,7 +38,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-NY6YZTH64L');
+            gtag('config', 'AW-17380423761');
           `}
         </Script>
       </head>
