@@ -4,7 +4,6 @@ import { Inter } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import Head from 'next/head'
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -30,7 +29,7 @@ export default function RootLayout({
       <head>
         {/* Google tag (gtag.js) */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17847118434"
+          src="https://www.googletagmanager.com/gtag/jsPid=AH-17847118434"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
